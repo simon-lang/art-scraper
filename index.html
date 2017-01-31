@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages CMS</title>
+    <script src="https://unpkg.com/angular@1.6.1/angular.js"></script>
+    <script>
+    var app = angular.module('messages', [])
+    app.controller('main', function($http, $scope) {
+        $http.get('output.csv')
+        .then(function (response) {
+            var lines = response.data.split('\n')
+            $scope.dictionary = lines.map((v) => {
+                return v.split(',').map(x => {
+                    return {
+                        title: v[0],
+                        artist: v[1],
+                        gallery: v[2]
+                    }
+                })
+            })
+            $scope.lines = lines
+        })
+    })
+    </script>
+</head>
+<body>
+    <div ng-app="messages">
+        <div ng-controller="main">
+            <input type="text" placeholder="search" ng-model="filter">
+            <ul>
+                <li ng-repeat="record in dictionary | filter:filter track by $index">
+                    <label>
+                        <h1>{{record}}</h1>
+                    </label>
+                </li>
+            </ul>
+        </div>  
+    </div>
+</body>
+</html>
