@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Messages CMS</title>
+    <title>Art Scraper Output</title>
+    <link href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://unpkg.com/angular@1.6.1/angular.js"></script>
     <script>
     var app = angular.module('messages', [])
@@ -25,13 +26,14 @@
     </script>
 </head>
 <body>
+    <h1>Not currently working</h1>
     <div ng-app="messages">
         <div ng-controller="main">
             <input type="text" placeholder="search" ng-model="filter">
             <ul>
                 <li ng-repeat="record in dictionary | filter:filter track by $index">
                     <label>
-                        <h1>{{record}}</h1>
+                        <pre>{{record}}</pre>
                     </label>
                 </li>
             </ul>
