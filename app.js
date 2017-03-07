@@ -4,6 +4,7 @@
 
 const _ = require('lodash')
 const fs = require('fs')
+const argv = require('yargs').argv
 
 let output = {}
 
@@ -41,6 +42,8 @@ files.forEach((file) => {
     output[artist] = years
 })
 
+const json = JSON.stringify(output)
+
 const encode = (s) => {
     s = s.replace(/"/g, '\"')
     return `"${s}"`
@@ -61,4 +64,9 @@ _.each(output, (record, artist) => {
     })
 })
 
-console.log(csv)
+if (argv.json) {
+  console.log(json)
+}
+else {
+  console.log(csv)
+}
