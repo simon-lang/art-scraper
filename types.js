@@ -1,13 +1,15 @@
 module.exports = {
   'Award': [
     'awards',
-    'accolades',
-    'recognitions',
+    'prizes',
+    'prix',
   ],
   'Solo Show': [
     'solo shows',
     'selected solo shows',
+    'one person shows',
     'solo exhibitions',
+    'one person exhibitions',
     'selected solo exhibitions',
   ],
   'Group Show': [
@@ -16,8 +18,10 @@ module.exports = {
     'group exhibitions',
     'selected group exhibitions',
   ],
-  'Public Collection': [
+  'Collection': [
+    'collections',
     'public collections',
     'selected public collections',
+    'acquisitions',
   ],
 }
