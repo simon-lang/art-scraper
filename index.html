@@ -26,12 +26,15 @@
                         <h2>{{k}}</h2>
                         <div
                           ng-repeat="(year, shows) in record"
-                          ng-click="displayShows = !displayShows"
                         >
-                          {{year}}
+                          <a class="btn btn-link" ng-click="displayShows = !displayShows">
+                            {{year}}
+                          </a>
                           <div ng-if="displayShows">
-                            <div ng-repeat="show in shows">
-                              <pre>{{show | json}}</pre>
+                            <div ng-repeat="show in shows" class="">
+                              <h4>{{show.title}}</h4>
+                              <p>{{show.gallery}}</p>
+                              <p>{{show.location}} {{show.country}}</p>
                             </div>
                           </div>
                         </div>
