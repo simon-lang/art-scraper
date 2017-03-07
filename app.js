@@ -18,7 +18,9 @@ files.forEach((file) => {
         let year = parseFloat(line)
         if (year > 1900 && year < 2050) {
             currentYear = year
-            years[year] = []
+            if (years[year] === undefined) {
+              years[year] = []
+            }
         }
         if (years[currentYear]) {
             let arr = line.split(',').map(x => x.trim())
