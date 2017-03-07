@@ -24,7 +24,7 @@ files.forEach((file) => {
         }
         if (years[currentYear]) {
             let arr = line.split(',').map(x => x.trim())
-            if (arr.length < 4) {
+            if (arr.length < 3) {
                 return true
             }
             years[currentYear].push({
@@ -55,7 +55,7 @@ _.each(output, (record, artist) => {
             csv += encode(show.title) + ','
             csv += encode(show.gallery) + ','
             csv += encode(show.location) + ','
-            csv += encode(show.country)
+            csv += encode(show.country || '')
             csv += '\n'
         })
     })
