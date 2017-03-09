@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "node src/app.js",
-    "web": "http-server"
+    "web": "node src/app.js --json > web/output.json; http-server"
   },
   "author": "",
   "description": ""

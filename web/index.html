@@ -32,9 +32,11 @@
                           </a>
                           <div ng-if="displayShows">
                             <div ng-repeat="show in shows" class="">
-                              <h4>{{show.title}}</h4>
-                              <p>{{show.gallery}}</p>
-                              <p>{{show.location}} {{show.country}}</p>
+                              <h3>{{show.type}}: {{show.title}}
+                                <br>  
+                                <small>{{show.gallery}}</small>
+                              </h3>
+                              <p><span ng-if="show.location">{{show.location}},</span> {{show.country}}</p>
                             </div>
                           </div>
                         </div>

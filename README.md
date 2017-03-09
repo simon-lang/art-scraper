@@ -21,6 +21,18 @@ There is a (very) simple proof of concept web UI in `web/`.
 
 Start a web server with `npm run web`.
 
-Generate json for web ui: `node src/app.js --json > web/output.json`
+Update data for web ui with: `node src/app.js --json > web/output.json`
 
 Visit [http://127.0.0.1:8080/web/](http://127.0.0.1:8080/web/)
+
+## Debugging
+
+To experiment, I recommend using the `--silent` flag. For example, in the code, you can write something like:
+
+```
+if (_.includes(title, 'Gallery')) {
+  console.log('Possible error: Title contains "Gallery":', i, line)
+}
+```
+
+Running with `node src/app.js --silent | wc -l` will tell you there are 382 hits where these potentially bad matches occur.

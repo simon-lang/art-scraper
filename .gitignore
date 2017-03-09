@@ -1,3 +1,4 @@
 node_modules
 pdf
 web/output.json
+npm-debug.log
