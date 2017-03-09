@@ -42,14 +42,14 @@ files.forEach((file) => {
       let location
       let country
 
-      // if (_.includes(title, 'Gallery')) {
-      //   console.log('Possible Error. Title contains "Gallery" on line', i, ':', line)
+      // if (title.includes('Gallery')) {
+      //   console.log(`Possible Error. Title contains string "Gallery" at ${file}:${i} : ${line}`)
       // }
       // if (locations.includes(title)) {
-      //   console.log('Possible Error. Title/Location mismatch on line', i, ':', line)
+      //   console.log(`Possible Error. Title/Location mismatch at ${file}:${i} : ${line}`)
       // }
       // if (locations.includes(gallery)) {
-      //   console.log('Possible Error. Gallery/Location mismatch on line', i, ':', line)
+      //   console.log(`Possible Error. Gallery/Location mismatch at ${file}:${i} : ${line}`)
       // }
 
       if (_.includes(countryNames, arr[3])) {
