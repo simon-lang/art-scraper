@@ -38,9 +38,7 @@ files.forEach((file) => {
         return true
       }
 
-      let [title, gallery] = arr
-      let location
-      let country
+      let [title, gallery, location, country] = arr
 
       // if (title.includes('Gallery')) {
       //   console.log(`Possible Error. Title contains string "Gallery" at ${file}:${i} : ${line}`)
@@ -52,18 +50,14 @@ files.forEach((file) => {
       //   console.log(`Possible Error. Gallery/Location mismatch at ${file}:${i} : ${line}`)
       // }
 
-      if (_.includes(countryNames, arr[3])) {
-        location = arr[2]
-        country = arr[3]
-      } else if (_.includes(countryNames, arr[2])) {
-        country = arr[2]
+      // [gallery, location, country] = arr // no title. e.g. Deutsche Bank, Berlin, Germany
+
+      if (countryNames.includes(location)) {
+        country = location
+        location = null
       }
-      let item = {
-        title,
-        gallery,
-        location,
-        country,
-      }
+
+      let item = { title, gallery, location, country }
       if (currentType) {
         item.type = currentType
       }

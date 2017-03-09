@@ -13,9 +13,9 @@ module.exports = (data) => {
         csv += encode(artist) + ','
         csv += encode(year) + ','
         csv += encode(show.type || '') + ','
-        csv += encode(show.title) + ','
-        csv += encode(show.gallery) + ','
-        csv += encode(show.location) + ','
+        csv += encode(show.title || '') + ','
+        csv += encode(show.gallery || '') + ','
+        csv += encode(show.location || '') + ','
         csv += encode(show.country || '')
         csv += '\n'
       })
