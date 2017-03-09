@@ -4,6 +4,7 @@ const argv = require('yargs').argv
 
 const countries = require('./countries')
 const countryNames = _.values(countries)
+const locations = require('./locations')
 const types = require('./types')
 const csvWriter = require('./csv')
 
@@ -17,7 +18,7 @@ files.forEach((file) => {
   let text = fs.readFileSync('txt/' + file, 'utf8')
   let lines = text.split('\n')
 
-  lines.forEach((line) => {
+  lines.forEach((line, i) => {
     line = line.trim()
     _.each(types, (aliases, type) => {
       if (line.toLowerCase() === type || _.includes(aliases, line.toLowerCase())) {
@@ -37,9 +38,20 @@ files.forEach((file) => {
         return true
       }
 
-      const [title, gallery] = arr
+      let [title, gallery] = arr
       let location
       let country
+
+      // if (_.includes(title, 'Gallery')) {
+      //   console.log('Possible Error. Title contains "Gallery" on line', i, ':', line)
+      // }
+      // if (locations.includes(title)) {
+      //   console.log('Possible Error. Title/Location mismatch on line', i, ':', line)
+      // }
+      // if (locations.includes(gallery)) {
+      //   console.log('Possible Error. Gallery/Location mismatch on line', i, ':', line)
+      // }
+
       if (_.includes(countryNames, arr[3])) {
         location = arr[2]
         country = arr[3]
