@@ -3,15 +3,15 @@
 ## Requirements
 
 - [node](http://nodejs.org/) to run scraper
-- `pdftotext` from `brew install poppler` to convert pdfs to a txt
+- `pdftotext` from `brew install poppler` to convert pdfs to txt
 
 ## Instructions
 
 Store CVs in the `txt/` folder with filename `ArtistName.txt`.
 
-Run with `node src/app.js` or if you want to save it to file, `node src/app.js > output.csv`. The scraper searches all text files in `txt/` and convert fields to a csv.
+Run with `node src/app.js` or if you want to save it to file, `node src/app.js > output.csv`. The scraper searches all text files in `txt/` and converts fields to a csv.
 
-If you want json output instead run `node app.js --json`.
+If you want json output instead run `node src/app.js --json`.
 
 Debug json output: `node src/app.js --json | jq .` (requires `brew install jq`)
 

@@ -44,7 +44,7 @@ module.exports = {
     "rules": {
         "indent": [
             "error",
-            4
+            2
         ],
         "linebreak-style": [
             "error",
@@ -237,7 +237,7 @@ module.exports = {
             "never"
         ],
         "quotes": [
-            2,
+            0,
             "single",
             "avoid-escape"
         ],
